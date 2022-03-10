@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-02-07T18:54:53+0100",
+    date = "2022-03-10T12:41:17+0100",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.2 (Oracle Corporation)"
 )
 @Component
@@ -31,6 +31,7 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
         beerInventory.createdDate( dateMapper.asTimestamp( beerInventoryDTO.getCreatedDate() ) );
         beerInventory.lastModifiedDate( dateMapper.asTimestamp( beerInventoryDTO.getLastModifiedDate() ) );
         beerInventory.beerId( beerInventoryDTO.getBeerId() );
+        beerInventory.upc( beerInventoryDTO.getUpc() );
         beerInventory.quantityOnHand( beerInventoryDTO.getQuantityOnHand() );
 
         return beerInventory.build();
@@ -48,6 +49,7 @@ public class BeerInventoryMapperImpl implements BeerInventoryMapper {
         beerInventoryDto.createdDate( dateMapper.asOffsetDateTime( beerInventory.getCreatedDate() ) );
         beerInventoryDto.lastModifiedDate( dateMapper.asOffsetDateTime( beerInventory.getLastModifiedDate() ) );
         beerInventoryDto.beerId( beerInventory.getBeerId() );
+        beerInventoryDto.upc( beerInventory.getUpc() );
         beerInventoryDto.quantityOnHand( beerInventory.getQuantityOnHand() );
 
         return beerInventoryDto.build();
