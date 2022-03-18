@@ -1,6 +1,28 @@
 logging:
   level:
-    guru: debug
+    root: INFO
+    guru: INFO
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: DEBUG
 server:
   port: 8082
-
+spring:
+  #  cache:
+  #    jcache:
+  #      config: "classpath:ehcache.xml"
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+  #    liquibase-schema: brewery
+  jpa:
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: validate
