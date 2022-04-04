@@ -5,7 +5,7 @@ databaseChangeLog:
       changes:
         - createTable:
             tableName: beer_inventory
-            schemaName: inventory
+#            schemaName: inventory
             columns:
               - column:
                   name: id
